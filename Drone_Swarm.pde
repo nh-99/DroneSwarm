@@ -1,9 +1,11 @@
 int searchRadius = 100;
-int numberOfDrones = 5;
+int numberOfDrones = 7;
 PImage image;
+int w = 1000;
+int h = 500;
 
 void setup() {
-  size(500, 500);
+  size(1000, 500);
   image = loadImage("drone.png");
 }
 
@@ -12,15 +14,15 @@ void draw() {
   background(255);
   int angle = 360;
   for(int i = 0; i < numberOfDrones; i++) {
-    int x = (int)(250 + (250 * (1 / cos(360 / numberOfDrones))) * cos(radians(angle + (360 / numberOfDrones))));
-    int y = (int)(250 + (250 * (1 / cos(360 / numberOfDrones))) * sin(radians(angle + (360 / numberOfDrones))));
+    int x = (int)(w/2 + (w/2 * (1 / cos(360 / numberOfDrones))) * cos(radians(angle + (360 / numberOfDrones))));
+    int y = (int)(h/2 + (h/2 * (1 / cos(360 / numberOfDrones))) * sin(radians(angle + (360 / numberOfDrones))));
     angle = angle - (360 / numberOfDrones);
     if(i % 2 == 0) {
-      drawDrone((250+x)/2, (250+y)/2);
+      drawDrone((w/2+x)/2, (h/2+y)/2);
     } else {
-      drawDroneRev((250+x)/2, (250+y)/2);
+      drawDroneRev((w/2+x)/2, (h/2+y)/2);
     }
-    //line(250, 250, x, y);
+    //line(w/2, h/2, x, y);
   }
 }
 
