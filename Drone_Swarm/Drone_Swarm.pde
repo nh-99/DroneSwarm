@@ -3,19 +3,21 @@ import g4p_controls.*;
 int searchRadius = 100;
 int numberOfDrones = 4;
 PImage image;
-int w = 400;
-int h = 400;
+int w = 700;
+int h = 700;
 
 void setup() {
   createGUI();
-  size(400, 400);
+  size(700, 700);
   image = loadImage("drone.png");
 }
 
 void draw() {
   numberOfDrones = custom_slider1.getValueI();
   strokeWeight(10);
-  background(255);
+  if(!checkbox3.isSelected()) {
+    background(255);
+  }
   int angle = 360;
   for(int i = 0; i < numberOfDrones; i++) {
     // Calculate (x,y) for the line ending points

@@ -26,6 +26,10 @@ public void checkbox2_clicked1(GCheckbox source, GEvent event) { //_CODE_:checkb
   println("checkbox2 - GCheckbox >> GEvent." + event + " @ " + millis());
 } //_CODE_:checkbox2:920033:
 
+public void checkbox3_clicked1(GCheckbox source, GEvent event) { //_CODE_:checkbox3:580799:
+  println("checkbox3 - GCheckbox >> GEvent." + event + " @ " + millis());
+} //_CODE_:checkbox3:580799:
+
 
 
 // Create all the GUI controls. 
@@ -35,22 +39,27 @@ public void createGUI(){
   G4P.setGlobalColorScheme(GCScheme.BLUE_SCHEME);
   G4P.setCursor(ARROW);
   surface.setTitle("Sketch Window");
-  custom_slider1 = new GCustomSlider(this, 299, 360, 100, 40, "grey_blue");
+  custom_slider1 = new GCustomSlider(this, 600, 660, 100, 40, "grey_blue");
   custom_slider1.setShowValue(true);
   custom_slider1.setLimits(4, 1, 9);
   custom_slider1.setNumberFormat(G4P.INTEGER, 0);
   custom_slider1.setOpaque(false);
   custom_slider1.addEventHandler(this, "custom_slider1_change1");
-  checkbox1 = new GCheckbox(this, 177, 378, 120, 20);
+  checkbox1 = new GCheckbox(this, 480, 680, 120, 20);
   checkbox1.setTextAlign(GAlign.LEFT, GAlign.MIDDLE);
   checkbox1.setText("Show Lines");
   checkbox1.setOpaque(false);
   checkbox1.addEventHandler(this, "checkbox1_clicked1");
-  checkbox2 = new GCheckbox(this, 56, 377, 120, 20);
+  checkbox2 = new GCheckbox(this, 360, 680, 120, 20);
   checkbox2.setTextAlign(GAlign.LEFT, GAlign.MIDDLE);
   checkbox2.setText("Show Points");
   checkbox2.setOpaque(false);
   checkbox2.addEventHandler(this, "checkbox2_clicked1");
+  checkbox3 = new GCheckbox(this, 240, 680, 120, 20);
+  checkbox3.setTextAlign(GAlign.LEFT, GAlign.MIDDLE);
+  checkbox3.setText("Show Trail");
+  checkbox3.setOpaque(false);
+  checkbox3.addEventHandler(this, "checkbox3_clicked1");
 }
 
 // Variable declarations 
@@ -58,3 +67,4 @@ public void createGUI(){
 GCustomSlider custom_slider1; 
 GCheckbox checkbox1; 
 GCheckbox checkbox2; 
+GCheckbox checkbox3; 
