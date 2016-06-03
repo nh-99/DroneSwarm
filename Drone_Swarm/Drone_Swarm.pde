@@ -13,7 +13,7 @@ void setup() {
 }
 
 void draw() {
-  numberOfDrones = getSliderVal();
+  numberOfDrones = custom_slider1.getValueI();
   strokeWeight(10);
   background(255);
   int angle = 360;
@@ -36,12 +36,18 @@ void draw() {
     if(i % 2 == 0) {
       // Use midpoint formula to calculate the center point to rotate around
       drawDrone((w / 2 + x) / 2, (h / 2 + y) / 2);
-      point((w / 2 + x) / 2, (h / 2 + y) / 2);
+      if(checkbox2.isSelected()) {
+        point((w / 2 + x) / 2, (h / 2 + y) / 2);
+      }
     } else {
       drawDroneRev((w / 2 + x) / 2, (h / 2 + y) / 2);
-      point((w / 2 + x) / 2, (h / 2 + y) / 2);
+      if(checkbox2.isSelected()) {
+        point((w / 2 + x) / 2, (h / 2 + y) / 2);
+      }
     }
-    //line(w / 2, h / 2, x, y);
+    if(checkbox1.isSelected()) {
+      line(w / 2, h / 2, x, y);
+    }
   }
 }
 
