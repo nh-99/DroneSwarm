@@ -1,15 +1,19 @@
+import g4p_controls.*;
+
 int searchRadius = 100;
-int numberOfDrones = 8;
+int numberOfDrones = 4;
 PImage image;
 int w = 400;
 int h = 400;
 
 void setup() {
+  createGUI();
   size(400, 400);
   image = loadImage("drone.png");
 }
 
 void draw() {
+  numberOfDrones = getSliderVal();
   strokeWeight(10);
   background(255);
   int angle = 360;
