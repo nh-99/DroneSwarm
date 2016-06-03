@@ -15,6 +15,10 @@
  */
 
 public void custom_slider1_change1(GCustomSlider source, GEvent event) { //_CODE_:custom_slider1:378415:
+  Drone drone = new Drone();
+  drones.add(drone);
+  stop = false;
+  iterations = 0;
   println("custom_slider1 - GCustomSlider >> GEvent." + event + " @ " + millis());
 } //_CODE_:custom_slider1:378415:
 
